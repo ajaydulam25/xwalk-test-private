@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p153710-e1614654.adobeaemcloud.com/bin/franklin.delivery/ajaydulam25/xwalk-test-private/main"
+    url: "https://author-p220207-e2271469.adobeaemcloud.com/bin/franklin.delivery/ajaydulam25/xwalk-test-private/main"
     type: "markup"
     suffix: ".html"
