@@ -9,7 +9,7 @@
 
 .cards > ul > li {
   border: 1px solid #dadada;
-  background-color: yellow !important;
+  background-color: var(--background-color);
 }
 
 .cards .cards-card-body {
