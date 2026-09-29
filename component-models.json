@@ -216,6 +216,38 @@
     ]
   },
   {
+    "id": "intelligent-personalisation",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "placeholder",
+        "label": "Search Placeholder",
+        "valueType": "string",
+        "value": "Ask TCS..."
+      },
+      {
+        "component": "text",
+        "name": "labels",
+        "label": "Labels",
+        "valueType": "string",
+        "multi": true
+      }
+    ]
+  },
+  {
     "id": "quote",
     "fields": [
       {

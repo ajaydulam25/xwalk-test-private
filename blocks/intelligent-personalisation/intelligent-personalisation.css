@@ -1,0 +1,148 @@
+main .intelligent-personalisation {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 24px;
+  background: #fff;
+  text-align: center;
+  isolation: isolate;
+}
+
+main .intelligent-personalisation::before,
+main .intelligent-personalisation::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: clamp(230px, 35vw, 451px);
+  aspect-ratio: 451 / 322;
+  opacity: 0.4;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+main .intelligent-personalisation::before {
+  top: 56px;
+  left: clamp(-80px, 2vw, 32px);
+  background-image: url('./images/glow-yellow.svg');
+}
+
+main .intelligent-personalisation::after {
+  right: clamp(-80px, 2vw, 24px);
+  bottom: 20px;
+  width: clamp(210px, 28vw, 363px);
+  aspect-ratio: 363 / 259;
+  background-image: url('./images/glow-blue.svg');
+}
+
+main .intelligent-personalisation .intelligent-personalisation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+main .intelligent-personalisation h2 {
+  margin: 0;
+  color: #0c0c0d;
+  font-family: inter, var(--body-font-family);
+  font-size: clamp(36px, 3.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+main .intelligent-personalisation .intelligent-personalisation-description {
+  max-width: 812px;
+  margin: 0;
+  color: #0c0c0d;
+  font-family: inter, var(--body-font-family);
+  font-size: clamp(18px, 2vw, 20px);
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+
+main .intelligent-personalisation .intelligent-personalisation-search {
+  display: flex;
+  align-items: center;
+  width: min(566px, 100%);
+  border: 2px solid #e6e6e6;
+  border-radius: 58px;
+  padding: 4px 12px;
+  background: color-mix(in srgb, #fff 40%, transparent);
+  box-shadow: 0 4px 40px rgb(0 0 0 / 25%);
+}
+
+main .intelligent-personalisation .intelligent-personalisation-search input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #0c0c0d;
+  font-family: inter, var(--body-font-family);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+main .intelligent-personalisation .intelligent-personalisation-search input::placeholder {
+  color: #0c0c0d;
+}
+
+main .intelligent-personalisation .intelligent-personalisation-mic {
+  inline-size: 40px;
+  block-size: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: center / 24px 24px no-repeat url('./images/mic.svg');
+  cursor: pointer;
+}
+
+main .intelligent-personalisation .intelligent-personalisation-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+main .intelligent-personalisation .intelligent-personalisation-pills button {
+  border: 1px solid #e6e6e6;
+  border-radius: 999px;
+  padding: 8px 24px;
+  background: #fff;
+  color: #0c0c0d;
+  font-size: 20px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+main .intelligent-personalisation .intelligent-personalisation-mic:focus-visible,
+main .intelligent-personalisation .intelligent-personalisation-pills button:focus-visible,
+main .intelligent-personalisation .intelligent-personalisation-search input:focus-visible {
+  outline: 2px solid #4673db;
+  outline-offset: 2px;
+}
+
+main .intelligent-personalisation .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (width >= 900px) {
+  main .intelligent-personalisation {
+    padding: 96px 80px;
+  }
+
+  main .intelligent-personalisation .intelligent-personalisation-content {
+    gap: 40px;
+  }
+}
