@@ -32,6 +32,9 @@ function buildTitle(cell) {
     return existingHeading;
   }
 
+  const hasElementChildren = cell.children.length > 0;
+  if (hasElementChildren) return null;
+
   const text = getTextContent(cell);
   if (!text) return null;
 
@@ -99,12 +102,29 @@ function buildActions(cell) {
 
 export default function decorate(block) {
   const rows = [...block.children];
-  const imageCell = cellByIndex(rows, 0);
-  const imageAltCell = cellByIndex(rows, 1);
-  const preTitleCell = cellByIndex(rows, 2);
-  const titleCell = cellByIndex(rows, 3);
-  const descriptionCell = cellByIndex(rows, 4);
-  const actionsCell = cellByIndex(rows, 5);
+  let imageCell = cellByIndex(rows, 0);
+  let imageAltCell = cellByIndex(rows, 1);
+  let preTitleCell = cellByIndex(rows, 2);
+  let titleCell = cellByIndex(rows, 3);
+  let descriptionCell = cellByIndex(rows, 4);
+  let actionsCell = cellByIndex(rows, 5);
+
+  if (!descriptionCell) {
+    const allCells = [...block.querySelectorAll(':scope > div > div')];
+    const detectedImageCell = allCells.find((cell) => cell.querySelector('picture, img'));
+    const contentCells = allCells.filter((cell) => cell !== detectedImageCell);
+
+    imageCell = detectedImageCell || imageCell;
+    imageAltCell = null;
+    preTitleCell = null;
+
+    const groupedContent = document.createElement('div');
+    contentCells.forEach((cell) => groupedContent.append(...[...cell.childNodes]));
+
+    titleCell = groupedContent;
+    descriptionCell = groupedContent;
+    actionsCell = groupedContent;
+  }
 
   const imageAlt = getTextContent(imageAltCell);
   const content = document.createElement('div');
@@ -124,7 +144,7 @@ export default function decorate(block) {
   const description = buildDescription(descriptionCell);
   if (description) content.append(description);
 
-  const actions = buildActions(actionsCell);
+  const actions = buildActions(actionsCell?.cloneNode(true));
   if (actions) content.append(actions);
 
   const teaserWrapper = document.createElement('div');
