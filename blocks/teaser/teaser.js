@@ -116,14 +116,41 @@ export default function decorate(block) {
 
     imageCell = detectedImageCell || imageCell;
     imageAltCell = null;
-    preTitleCell = null;
 
     const groupedContent = document.createElement('div');
     contentCells.forEach((cell) => groupedContent.append(...[...cell.childNodes]));
+    const paragraphs = [...groupedContent.querySelectorAll(':scope > p')];
+    const heading = groupedContent.querySelector(':scope > h1, :scope > h2, :scope > h3, :scope > h4, :scope > h5, :scope > h6');
+    const listActions = groupedContent.querySelector(':scope > ul, :scope > ol');
 
-    titleCell = groupedContent;
-    descriptionCell = groupedContent;
-    actionsCell = groupedContent;
+    const toCell = (node) => {
+      if (!node) return null;
+      const cell = document.createElement('div');
+      cell.append(node.cloneNode(true));
+      return cell;
+    };
+
+    if (heading) {
+      preTitleCell = toCell(paragraphs[0]);
+      titleCell = toCell(heading);
+    } else if (paragraphs.length >= 2) {
+      preTitleCell = toCell(paragraphs[0]);
+      titleCell = toCell(paragraphs[1]);
+    } else {
+      preTitleCell = null;
+      titleCell = toCell(paragraphs[0]);
+    }
+
+    const descriptionWrapper = document.createElement('div');
+    [...groupedContent.childNodes].forEach((node) => {
+      if (node === listActions || node === heading) return;
+      if (node === paragraphs[0] && preTitleCell) return;
+      if (!heading && node === paragraphs[1]) return;
+      descriptionWrapper.append(node.cloneNode(true));
+    });
+
+    descriptionCell = descriptionWrapper.childNodes.length ? descriptionWrapper : null;
+    actionsCell = listActions ? toCell(listActions) : groupedContent;
   }
 
   const imageAlt = getTextContent(imageAltCell);
