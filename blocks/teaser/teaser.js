@@ -32,10 +32,9 @@ function buildTitle(cell) {
     return existingHeading;
   }
 
-  const hasElementChildren = cell.children.length > 0;
-  if (hasElementChildren) return null;
-
-  const text = getTextContent(cell);
+  const paragraphTitle = cell.querySelector(':scope > p');
+  const titleSource = paragraphTitle || cell;
+  const text = getTextContent(titleSource);
   if (!text) return null;
 
   const heading = document.createElement('h2');
@@ -88,11 +87,16 @@ function buildActions(cell) {
   });
 
   const normalizedActions = actionElements.length ? actionElements : fallbackActions;
+  normalizedActions.forEach((action, index) => {
+    // first CTA solid, second CTA outline, rest solid
+    // eslint-disable-next-line no-param-reassign
+    action.dataset.variant = index === 1 ? 'outline' : 'solid';
+  });
+
   const actions = document.createElement('div');
   actions.className = 'teaser-actions';
   actions.append(...normalizedActions);
   const decoratedActions = decorateButtonGroup(actions, {
-    variant: 'solid',
     size: 'md',
     color: 'primary',
   });
