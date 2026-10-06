@@ -1,0 +1,49 @@
+main .teaser .teaser-wrapper {
+  display: grid;
+  gap: 24px;
+}
+
+main .teaser .teaser-image {
+  margin: 0;
+}
+
+main .teaser .teaser-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+main .teaser .teaser-content {
+  display: grid;
+  gap: 12px;
+  align-content: center;
+}
+
+main .teaser .teaser-pretitle {
+  margin: 0;
+  color: var(--dark-color);
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+main .teaser .teaser-title {
+  margin: 0;
+}
+
+main .teaser .teaser-description > :first-child {
+  margin-top: 0;
+}
+
+main .teaser .teaser-description > :last-child {
+  margin-bottom: 0;
+}
+
+@media (width >= 900px) {
+  main .teaser .teaser-wrapper {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 40px;
+  }
+}
