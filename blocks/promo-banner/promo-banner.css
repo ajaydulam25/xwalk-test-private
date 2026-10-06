@@ -1,0 +1,24 @@
+main .promo-banner .promo-banner-wrapper {
+  display: grid;
+  gap: 20px;
+}
+
+main .promo-banner .promo-banner-image {
+  margin: 0;
+}
+
+main .promo-banner .promo-banner-image img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+main .promo-banner .promo-banner-actions {
+  justify-content: center;
+}
+
+@media (width >= 900px) {
+  main .promo-banner .promo-banner-wrapper {
+    gap: 24px;
+  }
+}
