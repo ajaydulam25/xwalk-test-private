@@ -2,8 +2,8 @@
 Your project's description...
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.aem.page/
-- Live: https://main--{repo}--{owner}.aem.live/
+- Preview: https://main--{repo}--{owner}.aem.page/ (https://main--xwalk-test-private--ajaydulam25.aem.page/)
+- Live: https://main--{repo}--{owner}.aem.live/ (https://main--xwalk-test-private--ajaydulam25.aem.live/)
 
 ## Documentation
 
