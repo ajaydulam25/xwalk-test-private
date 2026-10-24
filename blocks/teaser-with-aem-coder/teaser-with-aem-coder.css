@@ -1,0 +1,62 @@
+/* mobile first: image stacked above content */
+main .teaser-with-aem-coder {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+main .teaser-with-aem-coder .teaser-with-aem-coder-image {
+  margin: 0;
+}
+
+main .teaser-with-aem-coder .teaser-with-aem-coder-image picture,
+main .teaser-with-aem-coder .teaser-with-aem-coder-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+main .teaser-with-aem-coder .teaser-with-aem-coder-image img {
+  object-fit: cover;
+}
+
+main .teaser-with-aem-coder .teaser-with-aem-coder-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+main .teaser-with-aem-coder .teaser-with-aem-coder-title {
+  margin: 0;
+}
+
+main .teaser-with-aem-coder .teaser-with-aem-coder-description > :first-child {
+  margin-top: 0;
+}
+
+main .teaser-with-aem-coder .teaser-with-aem-coder-description > :last-child {
+  margin-bottom: 0;
+}
+
+main .teaser-with-aem-coder .teaser-with-aem-coder-actions {
+  margin: 0;
+}
+
+/* tablet and up: image left, content right */
+@media (width >= 900px) {
+  main .teaser-with-aem-coder {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  main .teaser-with-aem-coder.no-image {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (width >= 1200px) {
+  main .teaser-with-aem-coder {
+    gap: 64px;
+  }
+}

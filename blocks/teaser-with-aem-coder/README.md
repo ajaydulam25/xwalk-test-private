@@ -1,0 +1,17 @@
+# teaser-with-aem-coder
+
+Custom **teaser** block. 
+
+## Authoring (Document Authoring)
+
+Model: `teaser`
+
+Single block table. Content: one row, one cell of content.
+
+## Supported variations
+
+No variations.
+
+## Universal Editor fields
+
+- Content fields derived from the block's decorate contract.

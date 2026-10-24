@@ -1,0 +1,11 @@
+{
+  "variantName": "teaser-with-aem-coder",
+  "baseBlock": "teaser",
+  "canonicalModel": "teaser",
+  "visualCharacteristics": "Two-column layout on desktop (900px+): image on the left, text column on the right with a title, a paragraph description and a single call-to-action button. Stacks image above text on mobile.",
+  "contentPattern": "One cell per row: image (with alt text), title (plain text, rendered as h2), description (rich text), call-to-action link (URL + button text).",
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Use to promote a single piece of content or destination with a supporting image, short headline, a description and one primary action.",
+  "reuseGuidance": "Reuse for any image + text + single CTA promotion. Use the existing teaser block when a pre-title or multiple actions are needed."
+}
