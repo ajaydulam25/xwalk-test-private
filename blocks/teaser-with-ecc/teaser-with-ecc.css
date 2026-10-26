@@ -1,0 +1,68 @@
+main .teaser-with-ecc {
+    display: grid;
+    gap: 24px;
+    align-items: center;
+    color: var(--text-color);
+}
+
+main .teaser-with-ecc .teaser-with-ecc-image,
+main .teaser-with-ecc .teaser-with-ecc-content {
+    min-width: 0;
+}
+
+main .teaser-with-ecc .teaser-with-ecc-image picture {
+    display: block;
+}
+
+main .teaser-with-ecc .teaser-with-ecc-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+main .teaser-with-ecc .teaser-with-ecc-content {
+    display: grid;
+    gap: 16px;
+    overflow-wrap: anywhere;
+}
+
+main .teaser-with-ecc .teaser-with-ecc-title :is(h1, h2, h3, h4, h5, h6),
+main .teaser-with-ecc p {
+    margin: 0;
+}
+
+main .teaser-with-ecc .teaser-with-ecc-description p + p {
+    margin-top: 0.8em;
+}
+
+main .teaser-with-ecc .teaser-with-ecc-actions .x-button {
+    box-sizing: border-box;
+    min-height: 44px;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+
+main .teaser-with-ecc a:focus-visible {
+    outline: 3px solid var(--text-color);
+    outline-offset: 4px;
+}
+
+@media (width >= 600px) {
+    main .teaser-with-ecc {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    main .teaser-with-ecc.no-image {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (width >= 900px) {
+    main .teaser-with-ecc {
+        gap: 48px;
+    }
+}
