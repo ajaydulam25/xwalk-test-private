@@ -1,0 +1,20 @@
+{
+  "variantName": "brand-banner-with-aem-coder",
+  "baseBlock": "hero",
+  "canonicalModel": "brand-banner-with-aem-coder",
+  "source": "figma:yElx5Tf9wr8G2vCXopi49W/174:26773",
+  "visualCharacteristics": {
+    "purpose": "hero",
+    "colorScheme": "dark",
+    "density": "spacious",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "full-bleed background image; left column with eyebrow, large title, content type | date details and one pill button with arrow",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "options": [],
+  "usage": "Use for a full-width brand or campaign banner that introduces a topic with a strong image, a short headline and a single primary action.",
+  "reuseGuidance": "Reuse for any image-backed banner with left-aligned text and one call to action. Use teaser-with-aem-coder for a side-by-side image and text layout."
+}

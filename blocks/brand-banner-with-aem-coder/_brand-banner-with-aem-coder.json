@@ -1,0 +1,108 @@
+{
+  "definitions": [
+    {
+      "title": "Brand Banner With Aem Coder",
+      "id": "brand-banner-with-aem-coder",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Brand Banner With Aem Coder",
+              "model": "brand-banner-with-aem-coder",
+              "heading_titleType": "h2"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "brand-banner-with-aem-coder",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Background Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Background Image Alt Text",
+          "description": "Leave empty if the image is purely decorative",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "heading_eyebrow",
+          "label": "Eyebrow",
+          "description": "Short label shown above the title, e.g. 01 Infrastructure & Hardware",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "heading_title",
+          "label": "Title",
+          "value": ""
+        },
+        {
+          "component": "select",
+          "name": "heading_titleType",
+          "label": "Title Heading Level",
+          "valueType": "string",
+          "value": "h2",
+          "options": [
+            {
+              "name": "H1",
+              "value": "h1"
+            },
+            {
+              "name": "H2",
+              "value": "h2"
+            },
+            {
+              "name": "H3",
+              "value": "h3"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "details_category",
+          "label": "Category",
+          "description": "Shown below the title, e.g. Article",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "details_date",
+          "label": "Date",
+          "description": "Shown next to the category, e.g. March 2026",
+          "value": ""
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "link",
+          "label": "Button URL"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkText",
+          "label": "Button Text",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
